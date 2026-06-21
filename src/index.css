@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root{
+/* primary */
+        --gold: hsl(39, 89%, 49%);
+        --gold-600: hsl(28, 76%, 44%);
+        --blue-500: hsl(230, 89%, 62%);
+        --blue-700: hsl(229, 64%, 46%);
+        --red-600: hsl(349, 71%, 52%);
+        --red-800: hsl(347, 75%, 35%);
+        --purple-600: hsl(261, 73%, 60%);
+        --purple-700: hsl(261, 51%, 44%);
+        --light-blue: hsl(189, 59%, 53%);
+        --light-blue-100: hsl(194, 58%, 42%);
+
+/* neutral */
+        --navy-900-dark-text: hsl(229, 25%, 31%);
+        --blue-700-score-text: hsl(229, 64%, 46%);
+        --gray-600-header-outline: hsl(246, 11%, 37%);
+        --radial-Gradient-bg: hsl(214, 47%, 23%), hsl(237, 48%, 15%)
+}
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+        font-size: 16px;
+}
+
+a{
+        color: inherit;
+}
+
+button{
+        background-color: transparent;
+        border: none;
+        font-family: inherit;
+        color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6{
+        font-size: 16px;
+}
