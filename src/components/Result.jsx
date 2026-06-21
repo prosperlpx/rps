@@ -6,6 +6,8 @@ export default function Result(
         bgColor,
 
         comImg,
+
+        setHasUserPicked
     }
     
 ){
@@ -13,9 +15,9 @@ export default function Result(
     
     return(
         <div id="result"
-            className="flex justify-center items-center"
+            className="justify-center items-center grid grid-cols-2 gap-22"
         >
-            <div className="user_pick flex flex-col justify-center items-center"
+            <div className="user_pick flex flex-col justify-center items-center gap-5"
             >
                 <ButtonPick 
                     img={img}
@@ -26,14 +28,21 @@ export default function Result(
                 <h2>YOU PICKED</h2>
             </div>
 
-            <div className="user_pick flex flex-col justify-center items-center">
+            <div className="ser_pick flex flex-col justify-center items-center gap-5">
                 <ButtonPick 
                     img={comImg.img}
                     alt = {comImg.alt}
                     // styleName ={styleName}
                 /> 
-                <h2>THE HOUSE PICKED</h2>
+                <h2>COM PICKED</h2>
             </div>
+
+            <button
+                onClick={() => setHasUserPicked(false)}
+                className=" col-span-2"
+            >
+                play again
+            </button>
         </div>
     )
 }

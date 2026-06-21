@@ -6,6 +6,7 @@
     height: 100vh;
     background-color: #fff;
     overlay: 100;
+    overflow: scroll;
     z-index: 1;
 
     @media(min-width:450px){
@@ -17,13 +18,12 @@
 }
 
 #overlay > div{
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    padding-top: 60px;
+    gap: 8rem;
+    padding: 20px;
 
     @media(min-width:450px){
         display: grid;
@@ -62,9 +62,8 @@ button{
 
 #playGame{
     background: linear-gradient(var(--radial-Gradient-bg));
-    overflow: hidden;
-    height: 100vh;
-    /* padding: 1.2rem; */
+    height: 100%;
+    padding-top: 1.2rem;
 
     @media(min-width:450px){
         height: fit-content;
@@ -83,7 +82,7 @@ button{
     border: 2px solid white;
     overflow: hidden;
     max-width: 350px;
-    margin:30px  auto;
+    margin: auto;
 
     @media(min-width:450px){
         max-width: 500px;
@@ -240,4 +239,5 @@ section{
 
 #result{
     color: #fff;
+    margin-top: 80px;
 }

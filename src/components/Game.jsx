@@ -88,6 +88,7 @@ export default function Game({ResetBtn, setToggleRules, setScore, score}){
                     resultImg={resultImg}
                     bgColor={resultBgColor}
                     comImg={comImg}
+                    setHasUserPicked={setHasUserPicked}
                 />}
             </div>
 
