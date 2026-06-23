@@ -20,12 +20,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
-    padding: 20px;
+    gap: 3rem;
+    padding: 10px;
 
     @media(min-width:450px){
         display: grid;
-        margin: 300px auto;
+        margin: 150px auto;
         width: 400px;
         padding: 30px;
         /* height: 400px; */
