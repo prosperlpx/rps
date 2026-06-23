@@ -1,5 +1,6 @@
 import {ButtonPick, Result, runGame} from "../exports";
 
+// all images needed imported
 import {rock, paper, scissors, lizard, spock} from '../imagesExport'
 
 import { useState } from "react";
@@ -20,16 +21,17 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
     
     
     function startGame(e){
+        console.log(e)
         setHasUserPicked(true) // starts the game 
         const userPick = e.target.alt;
-        const userBgImg = getResultImg(userPick);
+        const userBgImg = getImg(userPick, gamePlayArr);
         const userBgCol = getBgColor(userPick)
 
         const comPick = runGame(gamePlayArr);
-        const comBgImg = getResultImg(comPick);
+        const comBgImg = getImg(comPick, gamePlayArr);
         const comBgCol = getBgColor(comPick);
         
-        setResultImg(userBgImg) //sets the img and alt to resultImg from the returned getResultImg
+        setResultImg(userBgImg) //sets the img and alt to resultImg from the returned getImg
         
         setResultBgColor(userBgCol) //sets the bg for user btn
         
@@ -45,21 +47,13 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
         console.log(win)
     }
 
-    // get image for button if hasclicked is false
-    function getImg(item){
-        if(item === 'rock') return rock;
-        if(item === 'paper') return paper;
-        if(item === 'scissors') return scissors;
-        if(item === 'lizard') return lizard;
-        if (item === 'spock') return spock
-    }
-
     // button to show if hasClicked is false
     var Button = gamePlayArr.map((item, index) => {
+        var imgObj = getImg(item, gamePlayArr); //
         return <ButtonPick 
                 startGame={startGame}
-                img={getImg(item)}
-                alt={item}
+                img={imgObj.img}
+                alt={imgObj.alt}
                 bgColor={getBgColor(item)}
                 styleName={item}
                 key={item}
@@ -101,14 +95,14 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
 }
 
 
-function getResultImg(val){
+function getImg(val, arr){
 
     var img = (val) => {
-        if(val == 'rock') return rock;
-        if(val == 'paper') return paper;
-        if(val == 'scissors') return scissors;
-        if(val == 'lizard') return lizard;
-        if(val == 'spock') return spock;
+        if(val == arr[0]) return rock;
+        if(val == arr[1]) return paper;
+        if(val == arr[2]) return scissors;
+        if(val == arr[3]) return lizard;
+        if(val == arr[4]) return spock;
     }
 
     return{

@@ -1,4 +1,5 @@
 import ButtonPick from "./ButtonPick"
+import { rock } from "../imagesExport";
 
 export default function Result(
     {
@@ -20,8 +21,8 @@ export default function Result(
             <div className="user_pick flex flex-col justify-center items-center gap-5"
             >
                 <ButtonPick 
-                    img={img}
-                    alt = {alt}
+                    img={img ?? rock}
+                    alt = {alt ?? 'rock'}
                     bgColor={bgColor}
                 />
 
