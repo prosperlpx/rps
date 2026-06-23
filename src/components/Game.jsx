@@ -21,9 +21,14 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
     
     
     function startGame(e){
-        console.log(e)
         setHasUserPicked(true) // starts the game 
-        const userPick = e.target.alt;
+        let userPick = e.target.alt;
+
+        // if users do not clilck on image and it returns undefined then this is used to get the alt from the parent div
+        if(!userPick){
+            userPick = e.target.firstChild.firstChild.alt
+        }
+
         const userBgImg = getImg(userPick, gamePlayArr);
         const userBgCol = getBgColor(userPick)
 
