@@ -30,6 +30,7 @@ export default function Game({ResetBtn, setToggleRules, setScore, score}){
         if(userPick === gamePlayArr[4] && comPick === gamePlayArr[2] || userPick === gamePlayArr[4] && comPick === gamePlayArr[0]) return true
     }
 
+    const comPick = runGame(gamePlayArr) // gets comp pick
     function startGame(e){
         setHasUserPicked(true) // starts the game 
 
@@ -38,7 +39,6 @@ export default function Game({ResetBtn, setToggleRules, setScore, score}){
         setResultBgColor(getBgColor(e.target.alt)) //sets the bg for user btn
 
         // this is for computer
-        const comPick = runGame(gamePlayArr)
         setComImg(getResultImg(runGame(gamePlayArr)))
 
         var win = runScore(e.target.alt, comPick);
@@ -88,6 +88,7 @@ export default function Game({ResetBtn, setToggleRules, setScore, score}){
                     resultImg={resultImg}
                     bgColor={resultBgColor}
                     comImg={comImg}
+                    comBgColor={getBgColor(comPick)}
                     setHasUserPicked={setHasUserPicked}
                 />}
             </div>

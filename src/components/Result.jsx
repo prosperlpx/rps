@@ -6,7 +6,7 @@ export default function Result(
         bgColor,
 
         comImg,
-
+        comBgColor,
         setHasUserPicked
     }
     
@@ -32,6 +32,7 @@ export default function Result(
                 <ButtonPick 
                     img={comImg.img}
                     alt = {comImg.alt}
+                    bgColor={comBgColor}
                     // styleName ={styleName}
                 /> 
                 <h2>COM PICKED</h2>
