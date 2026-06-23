@@ -5,6 +5,7 @@ import Game from './components/Game'
 import ButtonPick from './components/ButtonPick'
 import Result from './components/Result'
 import runGame from './utils/runGame'
+import runScore from './utils/runScore'
 
 export{
     Overlay,
@@ -13,5 +14,6 @@ export{
     Game,
     ButtonPick,
     Result,
-    runGame
+    runGame,
+    runScore
 }

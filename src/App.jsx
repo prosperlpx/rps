@@ -1,8 +1,9 @@
 // every other component lives here
 import { Overlay, PlayGame, Header, Game} from "./exports"
 import './App.css'
-import logo from './images/logo-bonus.svg'
+import {logo} from './imagesExport'
 import { useState} from "react"
+import {runScore} from './exports'
 
 export default function App(){
     const [toggleRules, setToggleRules] = useState(true) //this is used to toggle the rules overlay 
@@ -35,6 +36,7 @@ export default function App(){
                         ResetBtn={ResetBtn} setToggleRules={setToggleRules}
                         setScore={setScore}
                         score={score}
+                        runScore={runScore}
                     />
                 </PlayGame>
             }
