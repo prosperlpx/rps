@@ -41,9 +41,16 @@ export default function Result(
 
             <button
                 onClick={() => setHasUserPicked(false)}
+                style={{
+                    backgroundColor: comBgColor,
+                    width: 'fit-content',
+                    margin: 'auto',
+                    padding: '8px',
+                    fontSize: '18px'
+                }}
                 className=" col-span-2"
             >
-                play again
+                Play again
             </button>
         </div>
     )
