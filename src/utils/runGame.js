@@ -5,7 +5,6 @@ export default function runGame(pickArr){
         // pick one item from the array randomly
         const comPick = pickArr[randNo]
 
-        console.log(randNo , comPick)
         return comPick
     }
 

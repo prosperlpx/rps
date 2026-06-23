@@ -244,4 +244,13 @@ section{
 #result{
     color: #fff;
     margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+
+    p{
+        grid-column: 1/3;
+    }
 }

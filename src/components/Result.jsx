@@ -5,7 +5,7 @@ export default function Result(
     {
         resultImg,
         bgColor,
-
+        result,
         comImg,
         comBgColor,
         setHasUserPicked
@@ -16,7 +16,6 @@ export default function Result(
     
     return(
         <div id="result"
-            className="justify-center items-center grid grid-cols-2 gap-22"
         >
             <div className="user_pick flex flex-col justify-center items-center gap-5"
             >
@@ -39,6 +38,13 @@ export default function Result(
                 <h2>COM PICKED</h2>
             </div>
 
+                <p
+                    style={{
+                        fontSize: '32px',
+                        textAlign: 'center',
+                        margin: 'auto'
+                    }}
+                >{result}</p>
             <button
                 onClick={() => setHasUserPicked(false)}
                 style={{

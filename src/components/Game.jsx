@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Game({ResetBtn, setToggleRules, setScore, score, runScore}){
     const gamePlayArr = ['rock', 'paper', 'scissors', 'lizard', 'spock'] //this is the arr that is preminent for this game
 
-    const [hasUserPicked, setHasUserPicked] = useState(false);
+    const [hasUserPicked, setHasUserPicked] = useState(false); // this is responsible for what is shown on the window browser
     
     // this is for user
     const [resultBgColor, setResultBgColor] = useState('');
@@ -18,15 +18,21 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
     const [comImg, setComImg] = useState('');
     const [comPick, setComPick] = useState('');
     const [comBgColor, setComBgColor] = useState('');
+
+    // the result state 
+    const [result, setResult] = useState('');
     
-    
+    // this is the function that starts the game when the btn is clicked
     function startGame(e){
         setHasUserPicked(true) // starts the game 
         let userPick = e.target.alt;
 
         // if users do not clilck on image and it returns undefined then this is used to get the alt from the parent div
         if(!userPick){
-            userPick = e.target.firstChild.firstChild.alt
+            userPick = e.target.firstChild.alt;
+            if(!userPick){
+                userPick = e.target.firstChild.firstChild.alt;
+            }
         }
 
         const userBgImg = getImg(userPick, gamePlayArr);
@@ -46,13 +52,17 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
 
         var win = runScore(userPick, comPick);
 
-        // if(win){
-        //     setScore(score +1) // this increases the win score by 1
-        // }
+        if(win == 'win'){
+            setScore(score +1) // this increases the win score by 1
+            setResult('You Win 🥳')
+        }else if(win == 'tie'){
+            setResult('It is a tie );') 
+        }
+        else setResult('You lose 😔')
         console.log(win)
     }
 
-    // button to show if hasClicked is false
+    // button to show if hasClicked is false and toggle so game starts
     var Button = gamePlayArr.map((item, index) => {
         var imgObj = getImg(item, gamePlayArr); //
         return <ButtonPick 
@@ -88,6 +98,7 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
                     bgColor={resultBgColor}
                     comImg={comImg}
                     comBgColor={comBgColor}
+                    result={result}
                     setHasUserPicked={setHasUserPicked}
                 />}
             </div>
