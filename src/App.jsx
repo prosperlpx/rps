@@ -26,14 +26,17 @@ export default function App(){
                 // show the playGame coponent if the toggleRules is set to be false
                 
                 // main game play page
-                <PlayGame>
+                <PlayGame> 
+                    {/* we use this syntax => { } for a commnet here  because it is inside a jsx*/}
+                    {/* this is a wrapper for other components*/}
                     <Header 
+                        // we use this (//) because this is considered to be js code
                         score={score}
                         logo={logo}
                     />
 
                     <Game 
-                        ResetBtn={ResetBtn} setToggleRules={setToggleRules}
+                        ResetBtn={ResetBtn} setToggleRules={setToggleRules} //reset btn is passed as a prop where as it is a jsx 
                         setScore={setScore}
                         score={score}
                         runScore={runScore}

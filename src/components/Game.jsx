@@ -93,16 +93,18 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
                 {!hasUserPicked && Button}
 
                 {/* if user has picked show this... */}
-                {hasUserPicked && <Result 
-                    resultImg={resultImg}
-                    bgColor={resultBgColor}
-                    comImg={comImg}
-                    comBgColor={comBgColor}
-                    result={result}
-                    setHasUserPicked={setHasUserPicked}
-                />}
+                {hasUserPicked && 
+                    <Result 
+                        resultImg={resultImg}
+                        bgColor={resultBgColor}
+                        comImg={comImg}
+                        comBgColor={comBgColor}
+                        result={result}
+                        setHasUserPicked={setHasUserPicked}
+                    />}
             </div>
 
+        {/* ResetBtn is rendered after destructuring from the prop */}
             <ResetBtn 
                 setToggleRules={setToggleRules} styleName='triggerRules'
             />

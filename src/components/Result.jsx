@@ -48,7 +48,7 @@ export default function Result(
             <button
                 onClick={() => setHasUserPicked(false)}
                 style={{
-                    backgroundColor: comBgColor,
+                    background: `linear-gradient(${bgColor}, ${comBgColor})`, //this generates a linear gradient for this component from the prop passed
                     width: 'fit-content',
                     margin: 'auto',
                     padding: '8px',
