@@ -17,11 +17,13 @@ export default function Result(
     
 
     const [comImgVal, setComImgVal] = useState();
-    const [showResult, setShowResult] = useState()
+    const [showResult, setShowResult] = useState();
+    const [playAgain, setPlayAgain] = useState();
 
     const timerId = setTimeout(() => {
         setComImgVal(comImg.img);
-        setShowResult(result)
+        setShowResult(result);
+        setPlayAgain('Play again')
     }, 2000);
     timerId;
 
@@ -59,19 +61,26 @@ export default function Result(
                         margin: 'auto'
                     }}
                 >{showResult}</p>
-            <button
-                onClick={() => setHasUserPicked(false)}
-                style={{
-                    backgroundColor: `${bgColor}`, //this generates a linear gradient for this component from the prop passed
-                    width: 'fit-content',
-                    margin: 'auto',
-                    padding: '8px',
-                    fontSize: '18px'
-                }}
-                className=" col-span-2"
-            >
-                Play again
-            </button>
-        </div>
+                
+            {!playAgain ? '' 
+                : 
+                <button
+                    onClick={() => {
+                        setHasUserPicked(false);
+                        clearTimeout(timerId)
+                    }}
+                    style={{
+                        backgroundColor: `${bgColor}`, //this generates a linear gradient for this component from the prop passed
+                        width: 'fit-content',
+                        margin: 'auto',
+                        padding: '8px',
+                        fontSize: '18px'
+                    }}
+                    className=" col-span-2"
+                >
+                    {playAgain}
+                </button>
+            }
+        </div>          
     )
 }

@@ -15,7 +15,7 @@ export default function ButtonPick(
 
             style={{
                 borderRadius: '50%',
-                backgroundColor: bgColor
+                backgroundColor: img === undefined ? '' : bgColor
             }}
         >
             <div
