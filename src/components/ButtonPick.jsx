@@ -23,13 +23,14 @@ export default function ButtonPick(
                 borderRadius: '50%'
                 }}
             >
-                <img 
+                {/* {!img && ''} */}
+                {img !== undefined && <img 
                     src={img}
                     alt={alt}
                     style={{
                         width: '100%'
                     }}
-                />
+                />}
             </div>
         </button>
     )

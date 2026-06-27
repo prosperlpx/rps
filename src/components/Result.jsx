@@ -1,5 +1,6 @@
 import ButtonPick from "./ButtonPick"
 import { rock } from "../imagesExport";
+import { useState } from "react";
 
 export default function Result(
     {
@@ -14,6 +15,16 @@ export default function Result(
 ){
     const {alt, img} = resultImg;
     
+
+    const [comImgVal, setComImgVal] = useState();
+    const [showResult, setShowResult] = useState()
+
+    const timerId = setTimeout(() => {
+        setComImgVal(comImg.img);
+        setShowResult(result)
+    }, 2000);
+    timerId;
+
     return(
         <div id="result"
         >
@@ -30,7 +41,10 @@ export default function Result(
 
             <div className="ser_pick flex flex-col justify-center items-center gap-5">
                 <ButtonPick 
-                    img={comImg.img}
+               
+                    img={ //write a fnc that returns this value but takes time to do that 
+                        comImgVal
+                    }
                     alt = {comImg.alt}
                     bgColor={comBgColor}
                     // styleName ={styleName}
@@ -44,7 +58,7 @@ export default function Result(
                         textAlign: 'center',
                         margin: 'auto'
                     }}
-                >{result}</p>
+                >{showResult}</p>
             <button
                 onClick={() => setHasUserPicked(false)}
                 style={{

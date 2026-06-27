@@ -53,7 +53,7 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
         var win = runScore(userPick, comPick);
 
         if(win == 'win'){
-            setScore(score +1) // this increases the win score by 1
+            setTimeout(() => setScore(score +1), 2000) // this increases the win score by 1
             setResult('You Win 🥳')
         }else if(win == 'tie'){
             setResult('It is a tie );') 
