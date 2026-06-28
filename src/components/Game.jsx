@@ -52,14 +52,16 @@ export default function Game({ResetBtn, setToggleRules, setScore, score, runScor
 
         var win = runScore(userPick, comPick);
 
-        if(win == 'win'){
-            setTimeout(() => setScore(score +1), 2000) // this increases the win score by 1
-            setResult('You Win 🥳')
-        }else if(win == 'tie'){
-            setResult('It is a tie );') 
+        function getWin(){
+            if(win == 'win'){
+                setTimeout(() => setScore(score +1), 2000) // this increases the win score by 1
+                setResult('You Win 🥳')
+            }else if(win == 'tie'){
+                setResult('It is a tie );') 
+            }
+            else setResult('You lose 😔')
         }
-        else setResult('You lose 😔')
-        console.log(win)
+        getWin()
     }
 
     // button to show if hasClicked is false and toggle so game starts
