@@ -14,6 +14,13 @@ export default function Result(
     
 ){
     const {alt, img} = resultImg;
+    const btnStyle = {
+        backgroundColor: `${bgColor}`, //this generates a linear gradient for this component from the prop passed
+        width: 'fit-content',
+        margin: 'auto',
+        padding: '8px',
+        fontSize: '18px'
+    }
     
 
     const [comImgVal, setComImgVal] = useState();
@@ -69,13 +76,7 @@ export default function Result(
                         setHasUserPicked(false);
                         clearTimeout(timerId)
                     }}
-                    style={{
-                        backgroundColor: `${bgColor}`, //this generates a linear gradient for this component from the prop passed
-                        width: 'fit-content',
-                        margin: 'auto',
-                        padding: '8px',
-                        fontSize: '18px'
-                    }}
+                    style={btnStyle}
                     className=" col-span-2"
                 >
                     {playAgain}
