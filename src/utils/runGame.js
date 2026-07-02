@@ -1,13 +1,13 @@
-export default function runGame(pickArr){
-    var randPick = (pickArr) => {
-        const randNo = Math.ceil((Math.random() * 4)); // generates a random number from 1 - 5
+export default function runGame(pickArr) {
+  var randPick = (pickArr) => {
+    const randNo = Math.floor(Math.random() * pickArr.length); // generates a random number from the length provided
 
-        // pick one item from the array randomly
-        const comPick = pickArr[randNo]
+    // pick one item from the array randomly
+    const comPick = pickArr[randNo];
 
-        return comPick
-    }
+    return comPick;
+  };
 
-    // console.log(randPick(pickArr))
-    return randPick(pickArr)
+  // console.log(randPick(pickArr))
+  return randPick(pickArr);
 }
