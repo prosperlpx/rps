@@ -6,8 +6,6 @@
         --gold-600: hsl(28, 76%, 44%);
         --blue-500: hsl(230, 89%, 62%);
         --blue-700: hsl(229, 64%, 46%);
-        --red-600: hsl(349, 71%, 52%);
-        --red-800: hsl(347, 75%, 35%);
         --purple-600: hsl(261, 73%, 60%);
         --purple-700: hsl(261, 51%, 44%);
         --light-blue: hsl(189, 59%, 53%);
@@ -18,5 +16,57 @@
         --blue-700-score-text: hsl(229, 64%, 46%);
         --gray-600-header-outline: hsl(246, 11%, 37%);
         --radial-Gradient-bg: hsl(214, 47%, 23%), hsl(237, 48%, 15%)
+}
+
+#ruleGrid{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        /* overflow: hidden; */
+        
+        @media (min-width: 400px){
+                grid-template-columns: repeat(2, 1fr);
+                width: 300px;
+                height: 300px;
+                margin: auto;
+                margin-top: 90px;
+                gap: 20px;
+        }
+
+        h1{
+                font-size: larger;
+                font-weight: 700;
+                @media (max-width: 400px) {
+                        width: fit-content;
+                        margin: auto;
+                }
+        }
+
+        button{
+                /* width: fit-content; */
+                margin: auto;
+                @media(min-width: 400px){
+                        grid-column: 3;
+                }
+
+                @media (max-width: 400px) {
+                        grid-row: 4;
+                        cursor: pointer;
+                        /* position: absolute; */
+                        /* left: 0; */
+                }
+
+                &:hover{
+                        cursor: pointer;
+                }
+        }
+
+        #rulesImg{
+                width: fit-content;
+                margin: auto;
+                
+                @media(min-width: 400px){
+                        grid-column: 1/4;
+                }
+        }
 }
 
