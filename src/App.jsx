@@ -11,7 +11,7 @@ export default function App() {
     <main>
       {showRules && <Rules text="rules" btnVal={cancelIcon} img={bgTriangle} handleRules={removeRules} />}
 
-      <p className="text-black">Hello world</p>
+      <p>Hello world</p>
     </main>
   );
 }
