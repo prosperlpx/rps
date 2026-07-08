@@ -5,6 +5,7 @@ import { rock, paper, scissors, lizard, spock } from "../imagesExport";
 
 import { useState, useEffect } from "react";
 
+const timer = 1000;
 export default function Game({
   ResetBtn,
   setToggleRules,
@@ -57,7 +58,7 @@ export default function Game({
 
     function getWin() {
       if (win == "win") {
-        setTimeout(() => setScore(prev => prev +1), 2000); // this increases the win score by 1
+        setTimeout(() => setScore(prev => prev +1), timer); // this increases the win score by 1
         setResult("You Win 🥳");
       } else if (win == "tie") {
         setResult("It is a tie );");
@@ -67,7 +68,7 @@ export default function Game({
   }
 
   // button to show if hasClicked is false and toggle so game starts
-  var Button = gamePlayArr.map((item, index) => {
+  var Button = gamePlayArr.map((item) => {
     var imgObj = getImg(item, gamePlayArr); //
     return (
       <ButtonPick
@@ -91,7 +92,7 @@ export default function Game({
   }
 
   return (
-    <section className={!hasUserPicked ? "showBg" : ""}>
+    <section className={!hasUserPicked ? "showBg" : ''}>
       <div id="gameCont">
         {/* if user has not picked show this... */}
         {!hasUserPicked && Button}

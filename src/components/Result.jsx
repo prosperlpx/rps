@@ -2,6 +2,7 @@ import ButtonPick from "./ButtonPick";
 import { rock } from "../imagesExport";
 import { useState } from "react";
 
+const timer = 1000;
 export default function Result({
   resultImg,
   bgColor,
@@ -34,7 +35,7 @@ export default function Result({
     setComImgVal(comImg.img);
     setShowResult(result);
     setPlayAgain("Play again");
-  }, 2000);
+  }, timer);
   timerId;
 
   return (
