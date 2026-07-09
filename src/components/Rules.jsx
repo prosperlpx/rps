@@ -1,7 +1,7 @@
 function Rules({ text, btnVal, img, alt, handleRules}) {
   return (
     <section 
-        className="fixed top-0 bg-white z-10 h-screen sm:opacity-50 sm:bg-black w-screen"
+        className="fixed top-0 bg-white z-10 h-screen sm:bg-transparent w-screen"
     >
       <div className="items-center w-screen h-full sm:bg-white" id="ruleGrid">
           <h1>{text.toUpperCase()}</h1>
