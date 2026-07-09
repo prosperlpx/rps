@@ -13,7 +13,11 @@ export default function  Header({
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    background: 'white',
+                    padding: '12px 20px',
+                    borderRadius: '0.6rem',
+                    color: 'black'
                 }}
             >
                 <p>SCORE</p>
