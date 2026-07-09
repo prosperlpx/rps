@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Header, GameBody} from "../utils/compExports"
+import { Header, GameBody, whoWins} from "../utils/exports"
 import {logo} from '../utils/imageExports'
 import { useState } from "react"
 
@@ -14,8 +14,20 @@ export default function Game(){
         localStorage.score = yourScore
     }, [yourScore])
     
-    function handleClick(){
-        setYourScore(prev => prev +1)
+    function handleScore(){
+        // only when user clicks a btn the whoWinns fnc runs and saves it result in a variable to be used
+        var gameObj = {
+            rock: 'rock', paper: 'paper', scissors: 'scissors'
+        }
+        var gameArr = Object.values(gameObj); // returned value from the obj as an arr
+        const genRand = Math.floor(Math.random() * gameArr.length)
+        const comPick = gameArr[genRand]
+        console.log(comPick)
+        const result = whoWins(yourPick, opponetPick, gameObj)
+        
+        if(result == 'win') setYourScore(prevScore => prevScore +1)
+            
+        if(result == 'lose') setYourScore(prevScore => prevScore -1)
     }
 
     return(
@@ -28,7 +40,7 @@ export default function Game(){
             <GameBody />
 
             <button
-                onClick={handleClick}
+                onClick={handleScore}
             >
                 click
             </button>

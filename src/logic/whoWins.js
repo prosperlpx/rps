@@ -7,7 +7,7 @@ export default function whoWins(yourPick, opponetPick, gameObj) {
     const {rock, paper, scissors} = gameObj;
 
     // this tells if it is a tie
-    return yourPick === opponetPick && "tie";
+    if(yourPick === opponetPick && "tie") return 'tie';
 
     // this tells if you win
     if(yourPick == rock && opponetPick == scissors || yourPick == scissors && opponetPick == paper || yourPick == paper && opponetPick == rock) return 'win';

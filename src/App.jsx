@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Rules, Game } from "./utils/compExports";
+import { Rules, Game } from "./utils/exports";
 import { cancelIcon, bgTriangle } from "./utils/imageExports";
 
 export default function App() {
