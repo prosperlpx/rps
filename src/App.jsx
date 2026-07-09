@@ -9,16 +9,15 @@ export default function App() {
 
   return (
     <main>
-      {showRules ? (
-        <Rules
+      {showRules && <Rules
           text="rules"
           btnVal={cancelIcon}
           img={bgTriangle}
           handleRules={removeRules}
         />
-      ) : (
+      }
+        
         <Game />
-      )}
     </main>
   );
 }

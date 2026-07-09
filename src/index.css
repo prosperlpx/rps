@@ -18,11 +18,11 @@
         --radial-Gradient-bg: hsl(214, 47%, 23%), hsl(237, 48%, 15%)
 }
 
-section{
+/* section{
         @media (min-width: 40rem){
                 background-color: transparent;
         }
-}
+} */
 
 #ruleGrid{
         display: grid;
@@ -31,12 +31,13 @@ section{
         
         @media (min-width: 40rem){
                 grid-template-columns: repeat(2, 1fr);
-                width: 300px;
-                height: 300px;
+                width: 350px;
+                height: 400px;
                 margin: auto;
                 margin-top: 150px;
                 gap: 20px;
                 border-radius: 1.2rem;
+                padding: 25px;
         }
 
         h1{
@@ -78,3 +79,10 @@ section{
         }
 }
 
+
+#game{
+        background: linear-gradient(var( --radial-Gradient-bg));
+        height: 100vh;
+        color: white;
+        overflow: hidden;
+}
