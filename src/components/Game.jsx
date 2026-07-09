@@ -34,12 +34,6 @@ export default function Game() {
     }
   }
 
-  const btnStyle = {
-    padding: '5px',
-    borderRadius: '8px',
-    color: 'white'
-  }
-
   return (
     <div id="game">
       <Header logo={logo} yourScore={yourScore} />
@@ -47,10 +41,7 @@ export default function Game() {
       <GameBody />
 
       {/* <button onClick={handleScore}>click</button> */}
-      <Button 
-        btnVal={'Rules'}
-        btnStyle={btnStyle}
-      />
+      
     </div>
   );
 }
