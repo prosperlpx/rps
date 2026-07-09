@@ -17,7 +17,7 @@ export default function App() {
         />
       }
         
-        <Game />
+      <Game />
     </main>
   );
 }
