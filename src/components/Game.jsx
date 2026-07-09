@@ -14,7 +14,7 @@ export default function Game() {
 
   function handleScore() {
     // only when user clicks a btn the whoWinns fnc runs and saves it result in a variable to be used
-    var gameObj = {
+    const gameObj = {
       rock: "rock",
       paper: "paper",
       scissors: "scissors",
@@ -22,11 +22,16 @@ export default function Game() {
     var gameArr = Object.values(gameObj); // returned value from the obj as an arr
     const genRand = Math.floor(Math.random() * gameArr.length);
     const comPick = gameArr[genRand];
-    const result = whoWins(yourPick, opponetPick, gameObj);
+    const result = whoWins('rock', comPick, gameObj);
 
-    if (result == "win") setYourScore((prevScore) => prevScore + 1);
+    console.log(result)
+    if (result == "win") return setYourScore((prevScore) => prevScore + 1);
 
-    if (result == "lose") setYourScore((prevScore) => prevScore - 1);
+    // if it is zero or less set it to zero
+    if (result == "lose"){
+      if(yourScore <= 0) setYourScore(0) 
+      else setYourScore((prevScore) => prevScore - 1)
+    }
   }
 
   return (
@@ -39,3 +44,5 @@ export default function Game() {
     </div>
   );
 }
+
+
