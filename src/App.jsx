@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Rules } from "./utils/compExports";
+import { Rules, Game } from "./utils/compExports";
 import { cancelIcon, bgTriangle } from "./utils/imageExports";
 
 export default function App() {
@@ -9,10 +9,16 @@ export default function App() {
 
   return (
     <main>
-      {showRules && <Rules text="rules" btnVal={cancelIcon} img={bgTriangle} handleRules={removeRules} />}
-
-      <p>Hello world</p>
+      {showRules ? (
+        <Rules
+          text="rules"
+          btnVal={cancelIcon}
+          img={bgTriangle}
+          handleRules={removeRules}
+        />
+      ) : (
+        <Game />
+      )}
     </main>
   );
 }
-
