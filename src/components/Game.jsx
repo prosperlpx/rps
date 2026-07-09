@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Header, GameBody, whoWins } from "../utils/exports";
+import { Header, GameBody, whoWins, Button} from "../utils/exports";
 import { logo } from "../utils/imageExports";
 import { useState } from "react";
 
@@ -34,13 +34,23 @@ export default function Game() {
     }
   }
 
+  const btnStyle = {
+    padding: '5px',
+    borderRadius: '8px',
+    color: 'white'
+  }
+
   return (
     <div id="game">
       <Header logo={logo} yourScore={yourScore} />
 
       <GameBody />
 
-      <button onClick={handleScore}>click</button>
+      {/* <button onClick={handleScore}>click</button> */}
+      <Button 
+        btnVal={'Rules'}
+        btnStyle={btnStyle}
+      />
     </div>
   );
 }
