@@ -17,7 +17,9 @@ export default function App() {
         />
       }
         
-      <Game />
+      <Game 
+        setShowRules = {setShowRules}
+      />
     </main>
   );
 }
