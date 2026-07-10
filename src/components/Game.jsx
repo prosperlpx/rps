@@ -8,6 +8,7 @@ export default function Game({
 }) {
   // if localstorage is not set yet, set the state to zero if it is set, convert to a number and save to our state which is rendered in our component
   const [yourScore, setYourScore] = useState(+localStorage.score || 0);
+  const [isBtnPicked, setIsBtnPicked] = useState(false)
 
   // this handles the effect change on storeScore
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function Game({
   }, [yourScore]);
 
   function handleScore(e) {
+    setIsBtnPicked(prev => true)
     // only when user clicks a btn the whoWinns fnc runs and saves it result in a variable to be used
     const yourPick = e.target.alt || e.target.id; //gets your pick
     const gameObj = {
@@ -43,6 +45,8 @@ export default function Game({
       <GameBody 
         setShowRules={setShowRules}
         handleScore={handleScore}
+        isBtnPicked={isBtnPicked}
+        setIsBtnPicked={setIsBtnPicked}
       />
 
     </div>

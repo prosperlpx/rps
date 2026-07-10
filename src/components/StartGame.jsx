@@ -1,4 +1,5 @@
 import { rock, paper, scissors, triangleBg} from "../utils/imageExports"
+import {Result} from '../utils/exports'
 
 var btnGlobalStyle = {
     borderRadius: '50%',
@@ -23,7 +24,8 @@ const btnStyle = {
 }
 
 export default function StartGame({
-    handleScore
+    handleScore,
+    isBtnPicked
 }){
     const {rock: rockStyle, paper: paperStyle, scissors : scissorsStyle} = btnStyle;
 
@@ -31,29 +33,38 @@ export default function StartGame({
         <div
             className={`sm:self-start sm:ml-32 `}
         >
-            <div
-                id="triangle"
-                className="grid grid-cols-3 gap-8"
-            >
-                {['rock','paper','scissors'].map((item) => {
-                    return (
-                    <button
-                        id={item}
-                        key={item}
-                        style={item == 'rock' ? rockStyle : item == 'paper' ? paperStyle : scissorsStyle}
-                        onClick={handleScore}
-                    >
-                    <img 
-                        src={
-                            item == 'rock' ? rock : item == 'paper' ? paper : scissors
-                        } 
-                        alt={item}
-                    className="bg-white p-3 w-12 h-12 sm:w-15 sm:h-15 rounded-full"
-                    />
-                    </button>
-                    )
-                })}
-            </div>
+            {!isBtnPicked ? 
+                <div
+                    id="triangle"
+                    className="grid grid-cols-3 gap-8"
+                >
+                    {['rock','paper','scissors'].map((item) => {
+                        return (
+                        <button
+                            id={item}
+                            key={item}
+                            style={item == 'rock' ? rockStyle : item == 'paper' ? paperStyle : scissorsStyle}
+                            onClick={handleScore}
+                        >
+                        <img 
+                            src={
+                                item == 'rock' ? rock : item == 'paper' ? paper : scissors
+                            } 
+                            alt={item}
+                        className="bg-white p-3 w-12 h-12 sm:w-15 sm:h-15 rounded-full"
+                        />
+                        </button>
+                        )
+                    })}
+                </div>
+            : <Result 
+                    yourPick
+                    oppPick
+                    pickImg
+                    oppImg
+                    scoreInfo
+            />
+            }
         </div>
     )
 }

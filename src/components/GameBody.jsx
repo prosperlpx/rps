@@ -3,6 +3,7 @@ import {Button, StartGame} from '../utils/exports'
 export default function GameBody({
     setShowRules,
     handleScore,
+    isBtnPicked,
     getYourPick //remember this
 }){
     const btnStyle = {
@@ -20,6 +21,7 @@ export default function GameBody({
             <StartGame 
                 getYourPick={getYourPick}
                 handleScore={handleScore}
+                isBtnPicked={isBtnPicked}
             />
 
             <Button 
