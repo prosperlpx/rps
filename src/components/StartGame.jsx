@@ -30,10 +30,9 @@ export default function StartGame({
     return(
         <div>
             {['rock','paper','scissors'].map((item) => {
-                const id = `btn_${item}`
                 return (
                 <button
-                    id={id}
+                    id={item}
                     key={item}
                     style={item == 'rock' ? rockStyle : item == 'paper' ? paperStyle : scissorsStyle}
                     onClick={handleScore}
