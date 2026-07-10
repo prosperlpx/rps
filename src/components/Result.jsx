@@ -1,5 +1,16 @@
-export default function Result(){
+import { BtnPick } from "./StartGame"
+
+export default function Result({
+    yourPick,
+    oppPick,
+    pickImg,
+    oppImg,
+    scoreInfo
+}){
     return(
-        <p>Result</p>
+        <>
+            {BtnPick('paper')}
+            {BtnPick('scissors')}
+        </>
     )
 }
