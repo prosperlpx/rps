@@ -1,7 +1,8 @@
-import {Button} from '../utils/exports'
+import {Button, StartGame} from '../utils/exports'
 
 export default function GameBody({
-    setShowRules
+    setShowRules,
+    getYourPick //remember this
 }){
     const btnStyle = {
         padding: '5px',
@@ -16,6 +17,10 @@ export default function GameBody({
     }
     return(
         <div>
+            <StartGame 
+                getYourPick={getYourPick}
+            />
+
             <Button 
                 btnVal={'Rules'}
                 btnStyle={btnStyle}

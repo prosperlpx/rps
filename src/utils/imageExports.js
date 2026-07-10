@@ -1,3 +1,6 @@
 export {default as cancelIcon} from '../images/icon-close.svg'
 export {default as bgTriangle} from '../images/image-rules.svg'
 export {default as logo} from '../images/logo.svg'
+export {default as rock} from '../images/icon-rock.svg'
+export {default as paper} from '../images/icon-paper.svg'
+export {default as scissors} from '../images/icon-scissors.svg'
