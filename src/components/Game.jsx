@@ -17,7 +17,6 @@ export default function Game({
   function handleScore(e) {
     // only when user clicks a btn the whoWinns fnc runs and saves it result in a variable to be used
     const yourPick = e.target.alt || e.target.id; //gets your pick
-    console.log(yourPick)
     const gameObj = {
       rock: "rock",
       paper: "paper",
@@ -46,8 +45,6 @@ export default function Game({
         handleScore={handleScore}
       />
 
-      {/* <button onClick={handleScore}>click</button> */}
-      
     </div>
   );
 }

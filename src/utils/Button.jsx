@@ -6,6 +6,7 @@ export default function Button({
     return<button
         style={btnStyle}
         onClick={handleClick}
+        className={btnVal == 'Rules' && 'sm:self-end'}
     >
         {btnVal}
     </button>

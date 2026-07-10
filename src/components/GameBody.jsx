@@ -16,7 +16,7 @@ export default function GameBody({
         setShowRules(true)
     }
     return(
-        <div className='flex flex-col sm:flex-row items-center justify-center gap-50 py-24 h-125'>
+        <div className='flex flex-col sm:flex-row items-center justify-center sm:items-start  gap-50 py-24 h-125'>
             <StartGame 
                 getYourPick={getYourPick}
                 handleScore={handleScore}
