@@ -22,7 +22,9 @@ const btnStyle = {
     }
 }
 
-export default function StartGame(){
+export default function StartGame({
+    handleScore
+}){
     const {rock: rockStyle, paper: paperStyle, scissors : scissorsStyle} = btnStyle;
 
     return(
@@ -34,6 +36,7 @@ export default function StartGame(){
                     id={id}
                     key={item}
                     style={item == 'rock' ? rockStyle : item == 'paper' ? paperStyle : scissorsStyle}
+                    onClick={handleScore}
                 >
                    <img 
                     src={

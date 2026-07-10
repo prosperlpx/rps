@@ -24,6 +24,12 @@
         }
 } */
 
+button{
+        &:hover{
+                cursor: pointer;
+        }
+}
+
 #ruleGrid{
         display: grid;
         grid-template-rows: repeat(3, 1fr);
@@ -59,13 +65,6 @@
 
                 @media (max-width: 40rem) {
                         grid-row: 3;
-                        cursor: pointer;
-                        /* position: absolute; */
-                        /* left: 0; */
-                }
-
-                &:hover{
-                        cursor: pointer;
                 }
         }
 

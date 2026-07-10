@@ -2,6 +2,7 @@ import {Button, StartGame} from '../utils/exports'
 
 export default function GameBody({
     setShowRules,
+    handleScore,
     getYourPick //remember this
 }){
     const btnStyle = {
@@ -9,16 +10,16 @@ export default function GameBody({
         borderRadius: '8px',
         color: 'white',
         border: '2px solid white',
-        cursor: 'pointer'
     }
 
     function handleClick(){
         setShowRules(true)
     }
     return(
-        <div>
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-50 py-24 h-125'>
             <StartGame 
                 getYourPick={getYourPick}
+                handleScore={handleScore}
             />
 
             <Button 

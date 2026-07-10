@@ -14,8 +14,10 @@ export default function Game({
     localStorage.score = yourScore;
   }, [yourScore]);
 
-  function handleScore() {
+  function handleScore(e) {
     // only when user clicks a btn the whoWinns fnc runs and saves it result in a variable to be used
+    const yourPick = e.target.alt; //gets your pick
+    console.log(yourPick)
     const gameObj = {
       rock: "rock",
       paper: "paper",
@@ -24,9 +26,8 @@ export default function Game({
     var gameArr = Object.values(gameObj); // returned value from the obj as an arr
     const genRand = Math.floor(Math.random() * gameArr.length);
     const comPick = gameArr[genRand];
-    const result = whoWins('rock', comPick, gameObj);
+    const result = whoWins(yourPick, comPick, gameObj);
 
-    console.log(result)
     if (result == "win") return setYourScore((prevScore) => prevScore + 1);
 
     // if it is zero or less set it to zero
@@ -42,6 +43,7 @@ export default function Game({
 
       <GameBody 
         setShowRules={setShowRules}
+        handleScore={handleScore}
       />
 
       {/* <button onClick={handleScore}>click</button> */}
