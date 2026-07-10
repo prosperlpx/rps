@@ -85,3 +85,19 @@ button{
         color: white;
         overflow: hidden;
 }
+
+#rock{
+        grid-row: 2;
+        grid-column: 2;
+}
+
+#scissors{
+        grid-column: 3;
+}
+
+#triangle{
+        background-image: url(images/bg-triangle.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 150px;
+}
