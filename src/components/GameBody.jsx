@@ -7,7 +7,7 @@ export default function GameBody({
     setIsBtnPicked,
     getYourPick, //remember this
     yourPick,
-    oppPick,
+    oppPick
 }){
     const btnStyle = {
         padding: '5px',
@@ -16,9 +16,11 @@ export default function GameBody({
         border: '2px solid white',
     }
 
+    console.log('GameBody rerendered')
     function handleClick(){
         setShowRules(true)
     }
+
     return(
         <div className='flex flex-col sm:flex-row items-center justify-center gap-30 py-24 px-4 h-125'>
             <StartGame 

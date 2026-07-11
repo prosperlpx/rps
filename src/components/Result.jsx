@@ -3,13 +3,14 @@ import { BtnPick } from "./StartGame"
 
 export default function Result({
     yourPick,
-    oppPick,
     scoreInfo,
-    setIsBtnPicked
+    setIsBtnPicked,
+    oppPick
 }){
     function playAgain(){
         setIsBtnPicked(false)
     }
+    console.log(`you picked ${yourPick}\n com picked ${oppPick}`)
     return(
         <>
             <div
