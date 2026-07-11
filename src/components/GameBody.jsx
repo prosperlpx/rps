@@ -7,7 +7,8 @@ export default function GameBody({
     setIsBtnPicked,
     getYourPick, //remember this
     yourPick,
-    oppPick
+    oppPick,
+    scoreInfo
 }){
     const btnStyle = {
         padding: '5px',
@@ -29,6 +30,7 @@ export default function GameBody({
                 setIsBtnPicked={setIsBtnPicked}
                 yourPick={yourPick}
                 oppPick={oppPick}
+                scoreInfo={scoreInfo}
             />
 
             <Button 

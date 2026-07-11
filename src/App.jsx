@@ -6,6 +6,7 @@ export default function App() {
   const [showRules, setShowRules] = useState(true);
 
   const removeRules = () => setShowRules(false);
+
   return (
     <main>
       {showRules && <Rules

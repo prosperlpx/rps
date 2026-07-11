@@ -11,6 +11,7 @@ export default function Game({
   const [isBtnPicked, setIsBtnPicked] = useState(false)
   const [yourPick, setYourPick] = useState('');
   const [oppPick, setoppPick] = useState('');
+  const [scoreInfo, setScoreInfo] = useState();
 
   // this handles the effect change on storeScore
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Game({
     let pick = (e.target.alt || e.target.id); //gets your pick
     let comPick = getComPick();
     let result =  whoWins(pick, comPick, gameObj);
+    setScoreInfo(result)
     
     setYourPick(pick)
     setoppPick(comPick)
@@ -54,6 +56,7 @@ export default function Game({
     }
   }
 
+  
   return (
     <div id="game">
       <Header logo={logo} yourScore={yourScore} />
@@ -65,6 +68,7 @@ export default function Game({
         setIsBtnPicked={setIsBtnPicked}
         yourPick={yourPick}
         oppPick={oppPick}
+        scoreInfo={scoreInfo}
       />
 
     </div>

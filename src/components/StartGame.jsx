@@ -1,7 +1,7 @@
 import { rock, paper, scissors, triangleBg } from "../utils/imageExports";
 import { Result } from "../utils/exports";
 
-export default function StartGame({ handleScore, isBtnPicked, yourPick, setIsBtnPicked, oppPick}) {
+export default function StartGame({ handleScore, isBtnPicked, yourPick, setIsBtnPicked, oppPick, scoreInfo}) {
   return (
     <div className='sm:self-start sm:ml-32'>
       {!isBtnPicked ? (
@@ -11,7 +11,7 @@ export default function StartGame({ handleScore, isBtnPicked, yourPick, setIsBtn
           })}
         </div>
       ) : (
-        <Result yourPick={yourPick}  scoreInfo setIsBtnPicked={setIsBtnPicked} oppPick={oppPick}/>
+        <Result yourPick={yourPick}  scoreInfo={scoreInfo} setIsBtnPicked={setIsBtnPicked} oppPick={oppPick}/>
       )}
     </div>
   );
