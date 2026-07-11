@@ -6,7 +6,6 @@ export default function App() {
   const [showRules, setShowRules] = useState(true);
 
   const removeRules = () => setShowRules(false);
-  console.log('app rerendered')
   return (
     <main>
       {showRules && <Rules

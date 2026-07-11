@@ -2,7 +2,6 @@ import { rock, paper, scissors, triangleBg } from "../utils/imageExports";
 import { Result } from "../utils/exports";
 
 export default function StartGame({ handleScore, isBtnPicked, yourPick, setIsBtnPicked, oppPick}) {
-  console.log('start game rerendered')
   return (
     <div className='sm:self-start sm:ml-32'>
       {!isBtnPicked ? (

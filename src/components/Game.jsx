@@ -11,7 +11,6 @@ export default function Game({
   const [isBtnPicked, setIsBtnPicked] = useState(false)
   const [yourPick, setYourPick] = useState('');
   const [oppPick, setoppPick] = useState('');
-  console.log('game rerendered')
 
   // this handles the effect change on storeScore
   useEffect(() => {

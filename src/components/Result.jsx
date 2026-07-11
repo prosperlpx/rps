@@ -1,5 +1,6 @@
 import {Button} from "../utils/exports"
 import { BtnPick } from "./StartGame"
+import { useEffect, useState} from "react"
 
 export default function Result({
     yourPick,
@@ -7,10 +8,19 @@ export default function Result({
     setIsBtnPicked,
     oppPick
 }){
+    const [enemyPick, setEnemyPick] = useState()
     function playAgain(){
         setIsBtnPicked(false)
     }
-    console.log(`you picked ${yourPick}\n com picked ${oppPick}`)
+
+    useEffect(setComPick, [])
+
+    // on load of this page delay for some time before showing comPick and the other results
+    function setComPick(){
+        const timeId = setTimeout(() => setEnemyPick(BtnPick(oppPick)), 1000)
+    }
+
+    console.log(`you picked ${yourPick}\n com picked ${oppPick}`, name)
     return(
         <>
             <div
@@ -26,9 +36,10 @@ export default function Result({
                 <div
                     // className="bg-black w-16 h-15 rounded-full"
                 >
-                    {BtnPick(oppPick)}
+                    {enemyPick}
                     <p>THE HOUSE PICKED</p>
                 </div>
+
             </div>
 
             <Button 

@@ -16,7 +16,6 @@ export default function GameBody({
         border: '2px solid white',
     }
 
-    console.log('GameBody rerendered')
     function handleClick(){
         setShowRules(true)
     }
